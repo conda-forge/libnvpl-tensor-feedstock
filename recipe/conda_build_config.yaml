@@ -1,4 +1,6 @@
 c_stdlib_version:                # [linux]
-  - '2.28'                       # [linux]
+  - 2.28                         # [linux]
 arm_variant_type:                # [aarch64]
   - sbsa                         # [aarch64]
+docker_image: # Use image with support of glibc 2.28
+  - quay.io/condaforge/linux-anvil-alma-aarch64:8  # [linux and aarch64]
