@@ -1,4 +1,4 @@
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 {% set soversion = ".".join(version.split(".")[:3]) %}
 {% set somajor = version.split(".")[0] %}
 {% set arm_variant_type = arm_variant_type|default("sbsa") %}
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://developer.download.nvidia.com/compute/nvpl/redist/nvpl_tensor/linux-sbsa/nvpl_tensor-linux-sbsa-{{ version }}-archive.tar.xz
-  sha256: 74b0752772e6dd561d030d39739cca6ffc77b5b19abb1e9a9db9700c487d56d6
+  sha256: dd0e0f3d89a428a184dbb79b14d545803e82d4cb3ad0397729e03e3530a15350
 
 build:
   number: 0
@@ -46,7 +46,7 @@ outputs:
     test:
       files:
         - test
-      requires:    # [build_platform == target_platform]
+      requires:   # [build_platform == target_platform]
         - {{ compiler("c") }}  # [build_platform == target_platform]
         - {{ compiler("cxx") }}  # [build_platform == target_platform]
         - {{ stdlib("c") }}  # [build_platform == target_platform]
@@ -88,17 +88,11 @@ about:
   license_file: LICENSE
   license_url: https://docs.nvidia.com/nvpl/license.html
   summary: >-
-    The NVIDIA Performance Libraries (NVPL) are a collection of high
-    performance mathematical libraries optimized for the NVIDIA Grace Armv9.0
-    architecture.
+    The NVIDIA Performance Libraries (NVPL) are a collection of high performance mathematical libraries optimized for the NVIDIA Grace Armv9.0 architecture.
   description: >-
-    The NVIDIA Performance Libraries (NVPL) are a collection of high
-    performance mathematical libraries optimized for the NVIDIA Grace Armv9.0
-    architecture.
+    The NVIDIA Performance Libraries (NVPL) are a collection of high performance mathematical libraries optimized for the NVIDIA Grace Armv9.0 architecture.
 
-    These CPU-only libraries have no dependencies on CUDA or CTK, and are drop
-    in replacements for standard C and Fortran mathematical APIs allowing HPC
-    applications to achieve maximum performance on the Grace platform.
+    These CPU-only libraries have no dependencies on CUDA or CTK, and are drop in replacements for standard C and Fortran mathematical APIs allowing HPC applications to achieve maximum performance on the Grace platform.
   doc_url: https://docs.nvidia.com/nvpl/
 
 extra:
