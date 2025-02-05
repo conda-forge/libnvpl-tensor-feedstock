@@ -18,12 +18,30 @@ Current build status
 ====================
 
 
-<table><tr>
-    <td>Travis</td>
+<table>
+    
+  <tr>
+    <td>Azure</td>
     <td>
-      <a href="https://app.travis-ci.com/conda-forge/libnvpl-tensor-feedstock">
-        <img alt="linux" src="https://img.shields.io/travis/com/conda-forge/libnvpl-tensor-feedstock/main.svg?label=Linux">
-      </a>
+      <details>
+        <summary>
+          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=23599&branchName=main">
+            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvpl-tensor-feedstock?branchName=main">
+          </a>
+        </summary>
+        <table>
+          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
+          <tbody><tr>
+              <td>linux_aarch64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=23599&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libnvpl-tensor-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
     </td>
   </tr>
 </table>
