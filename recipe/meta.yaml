@@ -12,12 +12,17 @@ source:
   sha256: dd0e0f3d89a428a184dbb79b14d545803e82d4cb3ad0397729e03e3530a15350
 
 build:
-  number: 0
+  number: 1
   # nvpl is only for ARM architecture
   skip: true  # [not aarch64]
   script:
     - cp -rv include $PREFIX
     - cp -rv lib $PREFIX
+    - check-glibc "$PREFIX"/lib*/*.so.* "$PREFIX"/bin/* "$PREFIX"/targets/*/lib*/*.so.* "$PREFIX"/targets/*/bin/*  # [linux]
+
+requirements:
+  build:
+    - cf-nvidia-tools 1.*  # [linux]
 
 outputs:
 
@@ -46,7 +51,7 @@ outputs:
     test:
       files:
         - test
-      requires:    # [build_platform == target_platform]
+      requires:   # [build_platform == target_platform]
         - {{ compiler("c") }}  # [build_platform == target_platform]
         - {{ compiler("cxx") }}  # [build_platform == target_platform]
         - {{ stdlib("c") }}  # [build_platform == target_platform]
@@ -88,17 +93,11 @@ about:
   license_file: LICENSE
   license_url: https://docs.nvidia.com/nvpl/license.html
   summary: >-
-    The NVIDIA Performance Libraries (NVPL) are a collection of high
-    performance mathematical libraries optimized for the NVIDIA Grace Armv9.0
-    architecture.
+    The NVIDIA Performance Libraries (NVPL) are a collection of high performance mathematical libraries optimized for the NVIDIA Grace Armv9.0 architecture.
   description: >-
-    The NVIDIA Performance Libraries (NVPL) are a collection of high
-    performance mathematical libraries optimized for the NVIDIA Grace Armv9.0
-    architecture.
+    The NVIDIA Performance Libraries (NVPL) are a collection of high performance mathematical libraries optimized for the NVIDIA Grace Armv9.0 architecture.
 
-    These CPU-only libraries have no dependencies on CUDA or CTK, and are drop
-    in replacements for standard C and Fortran mathematical APIs allowing HPC
-    applications to achieve maximum performance on the Grace platform.
+    These CPU-only libraries have no dependencies on CUDA or CTK, and are drop in replacements for standard C and Fortran mathematical APIs allowing HPC applications to achieve maximum performance on the Grace platform.
   doc_url: https://docs.nvidia.com/nvpl/
 
 extra:
