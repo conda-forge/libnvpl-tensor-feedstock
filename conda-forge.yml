@@ -11,3 +11,7 @@ provider:
 test: native_and_emulated
 bot:
   check_solvable: true
+  version_updates:
+    nvidia:
+      compute_subdir: nvpl
+      json_name: nvpl_tensor
