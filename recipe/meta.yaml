@@ -1,4 +1,4 @@
-{% set version = "0.3.2.1" %}
+{% set version = "0.3.3" %}
 {% set soversion = ".".join(version.split(".")[:3]) %}
 {% set somajor = version.split(".")[0] %}
 {% set arm_variant_type = arm_variant_type|default("sbsa") %}
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://developer.download.nvidia.com/compute/nvpl/redist/nvpl_tensor/linux-sbsa/nvpl_tensor-linux-sbsa-{{ version }}-archive.tar.xz
-  sha256: e491ccb5fb4fb7df26665b204c337e0511a60b97edf354bd44e778942e4bd5c6
+  sha256: efbd7ae929169f3fd94fb3aa57779004bb238ea55174aabae8dcf9b6441fd9ee
 
 build:
   number: 0
